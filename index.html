@@ -98,7 +98,6 @@
         }
 
         .skills-list, .languages-list {
-            display: flex;
             flex-wrap: wrap;
         }
 
@@ -130,8 +129,30 @@
         .social-button:hover {
             color: #007bff;
         }
+    </style>
+    <style>
+        @media print {
+        @page {
+            margin: 10mm; /* Adjust margins for the entire document */
+            margin-bottom: 20mm; /* Space at the bottom of each page */
 
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Optional: If you have headers or footers on your page, hide them for print */
+        header, footer {
+            display: none;
+        }
+        /* Adds space at the beginning of the second page */
+        .second-page {
+            page-break-before: always; /* Forces a page break before this element */
+            padding-top: 15mm; /* Adds 30mm of space at the top of the second page */
+        }
+    }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
@@ -144,10 +165,14 @@
             <h1>Shihab Hossain</h1>
             <p class="subtitle mb-2">Full stack Web Developer</p>
             <div class="contact-info">
-                <p>Email: shehab.hossain267@gmail.com</p>
-                <p>Phone: +123-456-7890</p>
+                <p>
+                    Email: <a href="mailto:shehab.hossain267@gmail.com">shehab.hossain267@gmail.com</a>
+                </p>
+                <p>
+                    Phone: <a href="tel:+8801327842658">+8801327-842658</a>
+                </p>
                 <p><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/AcQUt7fgzZrs8Lxp6" target="_blank">Dhaka, Bangladesh</a></p>
-                <p>Website: reallygreatsite.com</p>
+                <p>Website: <a target="_blank" href="https://shihabhossain1/github.io/me">https://shihabhossain1/github.io/me</p></a>
             </div>
             <div class="mt-3">
                 <a href="https://github.com/shihabhossain1" target="_blank" class="social-button"><i class="fa-brands fa-github"></i></a>
@@ -160,13 +185,27 @@
             <div class="section skills">
                 <h2>Skills</h2>
                 <ul class="skills-list">
-                    <li><strong>Frontend Technologies:</strong><br> HTML, CSS, Bootstrap, JavaScript, HTMX</li>
-                    <li><strong>Backend Technologies:</strong><br> Python, Django, Flask</li>
-                    <li><strong>Server Technologies:</strong><br> Linux, ubuntu, Heroku, Pythonanywhere</li>
+                    <li><strong>Frontend Technologies:</strong><br> HTML, CSS, Bootstrap, JavaScript, vue js, HTMX</li>
+                    <li><strong >Backend Technologies:</strong><br>
+                    Python, Django, Flask, Django REST Framework, Celery, Redis, Gunicorn, uWSGI, Nginx, Docker
+                    </li>
+                    <li><strong>Server Technologies:</strong><br> Linux, ubuntu,Gunicorn, uWSGI, Nginx, Heroku, Pythonanywhere</li>
                     <li><strong>Database Technologies:</strong><br> MYSQL, SQL, SQLite3, Posgresql</li>
                 </ul>
             </div>
 
+            <!-- SOFT SKILLS Section -->
+            <div class="section soft-skills">
+                <h2>Soft Skills</h2>
+                <ul class="skills-list">
+                    <li>Communication</li>
+                    <li>Problem-Solving</li>
+                    <li>Teamwork</li>
+                    <li>Adaptability</li>
+                    <li>Time Management</li>
+                    <li>Critical Thinking</li>
+                </ul>
+            </div>
 
             <!-- Languages Section -->
             <div class="section languages">
@@ -174,7 +213,7 @@
                 <ul class="languages-list">
                     <li>English</li>
                     <li>Bangla</li>
-                    <li>Hendi</li>
+                    <li>Hindi</li>
                 </ul>
             </div>
         </aside>
@@ -206,7 +245,7 @@
                     <li>
                     <li>
                         <strong>Jul 2020 - Aug 2021</strong><br>
-                        <em>Timmerman Industries</em> - FMCG Sales Agent
+                        <em><a href="https://uniquebusinessworld.com/" class="no-underline" target="_blank">Unique Business World</a></em> - Senior Software Engineer - Remot
                         <ul>
                             <li>Visited corporate client offices to offer latest products</li>
                             <li>Built relationships with clients to maintain sales goals and create new opportunities</li>
@@ -229,11 +268,11 @@
                     <strong>GoVoucher</strong><br>
                     <p>Developed a complete voucher management platform for businesses to generate, distribute, and redeem vouchers, enabling online and offline promotions. The project involves a Python Django backend and an HTML/CSS/Bootstrap frontend.</p>
                     <a href="https://www.govoucher.com" target="_blank" class="no-underline">View Project</a>
-                </div>
+                </div><br>
                 <div class="project-item">
                     <strong>Best Online Earning</strong><br>
                     <p>An online platform offering users various ways to earn money by completing tasks, taking surveys, and engaging with brands. This project involved creating a secure and scalable platform using Python, Django, and MySQL with an intuitive frontend built using Bootstrap and JavaScript.</p>
-                    <a href="https://www.bestonlineearning.com" target="_blank" class="no-underline">View Project</a>
+                    <a href="https://uniquebusinessworld.com/" target="_blank" class="no-underline">View Project</a>
                 </div>
             </div>
 
@@ -250,6 +289,10 @@
                         <strong>Completed Web Development in 10 Minute Program</strong><br>
                         <em>IT Program</em> - IT Institute
                     </li>
+                    <li></li>
+                        <strong>2020 - 2022</strong><br>
+                        <em>HSC,SSC</em> - Secondary School
+                    </li>
                 </ul>
                 
             </div>
@@ -259,3 +302,18 @@
 
 </body>
 </html>
+
+
+<script>
+window.addEventListener("beforeprint", () => {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @media print {
+      @page { margin: 0; }
+      body { margin: 0; padding: 0; }
+      header, footer { display: none; }
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
